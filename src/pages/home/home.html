@@ -1,14 +1,41 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+    <div swingStack #swingStack>
+        <ion-card swingCard #swingCards  *ngFor="let c of cards" style="border-radius:5%;">
+                <img *ngIf="c.picture" [src]="c.picture" style="margin-top:0;margin-bottom:0px;min-height:100%; max-width:100%;border-radius:5%;box-shadow: 2px 3px 5px grey;">      
+                <div class="card-title">{{c.city}} ,{{c.country}}</div>
+                <div class="card-subtitle">{{c.name}} ,{{c.age}} ans</div>
+        </ion-card>
+   </div>
 </ion-content>
+<!-- <ion-content class="ion-content">
+  <div swing-stack #myswing1 [stackConfig]="stackConfig" (throwoutleft)="voteUp(false)" (throwoutright)="voteUp(true)" id="card-stack">
+    <div>
+      <ion-card #mycards1 swing-card *ngFor="let c of cards" style="border-radius:5%;">
+        <img *ngIf="c.picture" [src]="c.picture" style="margin-top:0;margin-bottom:0px;min-height:100%; max-width:100%;border-radius:5%;box-shadow: 2px 3px 5px grey;">      
+        <div class="card-title">{{c.city}} ,{{c.country}}</div>
+        <div class="card-subtitle">{{c.name}} ,{{c.age}} ans</div>
+      </ion-card>
+    </div>
+  </div>
+
+  <div text-center style="bottom:10px;position:fixed; align-content:center ; width : 100%">
+    <ion-row text-center>
+      <ion-col text-center>
+        <button ion-button icon-only outline color="danger" style="width:70px;height:70px;border-radius:50%" (click)="voteUp(false)">
+          <ion-icon name="md-close"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button icon-only outline color="cuspurple" style="width:50px;height:50px;border-radius:50%">
+          <ion-icon name="mail"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button icon-only outline color="flash" style="width:70px;height:70px;border-radius:50%" (click)="voteUp(true)">
+          <ion-icon name="md-flash"></ion-icon>
+        </button>
+      </ion-col>
+
+    </ion-row>
+  </div>
+</ion-content> -->
